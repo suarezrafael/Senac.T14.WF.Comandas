@@ -29,6 +29,10 @@ namespace Comandas
             new FrmPedidoCozinha().ShowDialog();
         }
 
-
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            // encerra o aplicativo
+            Application.Exit();
+        }
     }
 }

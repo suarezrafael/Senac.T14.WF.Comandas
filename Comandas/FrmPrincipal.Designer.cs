@@ -33,6 +33,7 @@
             btnPedidoCozinha = new ReaLTaiizor.Controls.MetroButton();
             btnComanda = new ReaLTaiizor.Controls.MetroButton();
             btnCardapio = new ReaLTaiizor.Controls.MetroButton();
+            btnSair = new ReaLTaiizor.Controls.CyberButton();
             gpxPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,9 +43,11 @@
             gpxPrincipal.Controls.Add(btnPedidoCozinha);
             gpxPrincipal.Controls.Add(btnComanda);
             gpxPrincipal.Controls.Add(btnCardapio);
-            gpxPrincipal.Location = new Point(43, 102);
+            gpxPrincipal.Location = new Point(30, 62);
+            gpxPrincipal.Margin = new Padding(2);
             gpxPrincipal.Name = "gpxPrincipal";
-            gpxPrincipal.Size = new Size(698, 275);
+            gpxPrincipal.Padding = new Padding(2);
+            gpxPrincipal.Size = new Size(488, 165);
             gpxPrincipal.TabIndex = 0;
             gpxPrincipal.TabStop = false;
             // 
@@ -58,7 +61,8 @@
             btnUsuarios.HoverColor = Color.FromArgb(95, 207, 255);
             btnUsuarios.HoverTextColor = Color.White;
             btnUsuarios.IsDerivedStyle = true;
-            btnUsuarios.Location = new Point(532, 72);
+            btnUsuarios.Location = new Point(373, 44);
+            btnUsuarios.Margin = new Padding(2);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.NormalBorderColor = Color.FromArgb(65, 177, 225);
             btnUsuarios.NormalColor = Color.FromArgb(65, 177, 225);
@@ -66,7 +70,7 @@
             btnUsuarios.PressBorderColor = Color.FromArgb(35, 147, 195);
             btnUsuarios.PressColor = Color.FromArgb(35, 147, 195);
             btnUsuarios.PressTextColor = Color.White;
-            btnUsuarios.Size = new Size(149, 135);
+            btnUsuarios.Size = new Size(104, 81);
             btnUsuarios.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             btnUsuarios.StyleManager = null;
             btnUsuarios.TabIndex = 3;
@@ -85,7 +89,8 @@
             btnPedidoCozinha.HoverColor = Color.FromArgb(95, 207, 255);
             btnPedidoCozinha.HoverTextColor = Color.White;
             btnPedidoCozinha.IsDerivedStyle = true;
-            btnPedidoCozinha.Location = new Point(367, 72);
+            btnPedidoCozinha.Location = new Point(257, 44);
+            btnPedidoCozinha.Margin = new Padding(2);
             btnPedidoCozinha.Name = "btnPedidoCozinha";
             btnPedidoCozinha.NormalBorderColor = Color.FromArgb(65, 177, 225);
             btnPedidoCozinha.NormalColor = Color.FromArgb(65, 177, 225);
@@ -93,7 +98,7 @@
             btnPedidoCozinha.PressBorderColor = Color.FromArgb(35, 147, 195);
             btnPedidoCozinha.PressColor = Color.FromArgb(35, 147, 195);
             btnPedidoCozinha.PressTextColor = Color.White;
-            btnPedidoCozinha.Size = new Size(149, 135);
+            btnPedidoCozinha.Size = new Size(104, 81);
             btnPedidoCozinha.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             btnPedidoCozinha.StyleManager = null;
             btnPedidoCozinha.TabIndex = 2;
@@ -112,7 +117,8 @@
             btnComanda.HoverColor = Color.FromArgb(95, 207, 255);
             btnComanda.HoverTextColor = Color.White;
             btnComanda.IsDerivedStyle = true;
-            btnComanda.Location = new Point(198, 72);
+            btnComanda.Location = new Point(138, 44);
+            btnComanda.Margin = new Padding(2);
             btnComanda.Name = "btnComanda";
             btnComanda.NormalBorderColor = Color.FromArgb(65, 177, 225);
             btnComanda.NormalColor = Color.FromArgb(65, 177, 225);
@@ -120,7 +126,7 @@
             btnComanda.PressBorderColor = Color.FromArgb(35, 147, 195);
             btnComanda.PressColor = Color.FromArgb(35, 147, 195);
             btnComanda.PressTextColor = Color.White;
-            btnComanda.Size = new Size(149, 135);
+            btnComanda.Size = new Size(104, 81);
             btnComanda.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             btnComanda.StyleManager = null;
             btnComanda.TabIndex = 1;
@@ -139,7 +145,8 @@
             btnCardapio.HoverColor = Color.FromArgb(95, 207, 255);
             btnCardapio.HoverTextColor = Color.White;
             btnCardapio.IsDerivedStyle = true;
-            btnCardapio.Location = new Point(27, 72);
+            btnCardapio.Location = new Point(19, 44);
+            btnCardapio.Margin = new Padding(2);
             btnCardapio.Name = "btnCardapio";
             btnCardapio.NormalBorderColor = Color.FromArgb(65, 177, 225);
             btnCardapio.NormalColor = Color.FromArgb(65, 177, 225);
@@ -147,7 +154,7 @@
             btnCardapio.PressBorderColor = Color.FromArgb(35, 147, 195);
             btnCardapio.PressColor = Color.FromArgb(35, 147, 195);
             btnCardapio.PressTextColor = Color.White;
-            btnCardapio.Size = new Size(149, 135);
+            btnCardapio.Size = new Size(104, 81);
             btnCardapio.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             btnCardapio.StyleManager = null;
             btnCardapio.TabIndex = 0;
@@ -156,15 +163,59 @@
             btnCardapio.ThemeName = "MetroLight";
             btnCardapio.Click += btnCardapio_Click;
             // 
+            // btnSair
+            // 
+            btnSair.Alpha = 20;
+            btnSair.BackColor = Color.Transparent;
+            btnSair.Background = true;
+            btnSair.Background_WidthPen = 4F;
+            btnSair.BackgroundPen = true;
+            btnSair.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnSair.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnSair.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnSair.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnSair.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnSair.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnSair.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnSair.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSair.Effect_1 = true;
+            btnSair.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSair.Effect_1_Transparency = 25;
+            btnSair.Effect_2 = true;
+            btnSair.Effect_2_ColorBackground = Color.White;
+            btnSair.Effect_2_Transparency = 20;
+            btnSair.Font = new Font("Arial", 11F);
+            btnSair.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSair.Lighting = false;
+            btnSair.LinearGradient_Background = false;
+            btnSair.LinearGradientPen = false;
+            btnSair.Location = new Point(23, 240);
+            btnSair.Name = "btnSair";
+            btnSair.PenWidth = 15;
+            btnSair.Rounding = true;
+            btnSair.RoundingInt = 70;
+            btnSair.Size = new Size(130, 50);
+            btnSair.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSair.TabIndex = 1;
+            btnSair.Tag = "Cyber";
+            btnSair.TextButton = "Sair";
+            btnSair.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSair.Timer_Effect_1 = 5;
+            btnSair.Timer_RGB = 300;
+            btnSair.Click += btnSair_Click;
+            // 
             // FrmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(605, 302);
+            Controls.Add(btnSair);
             Controls.Add(gpxPrincipal);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "FrmPrincipal";
-            Text = "Form1";
-
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sistema de Comandas";
             gpxPrincipal.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -176,5 +227,6 @@
         private ReaLTaiizor.Controls.MetroButton btnPedidoCozinha;
         private ReaLTaiizor.Controls.MetroButton btnComanda;
         private ReaLTaiizor.Controls.MetroButton btnCardapio;
+        private ReaLTaiizor.Controls.CyberButton btnSair;
     }
 }

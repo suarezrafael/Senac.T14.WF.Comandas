@@ -25,13 +25,15 @@
         private void AtualizarUsuario()
         {
             using (var banco = new BananaContext())
-            {
+            { // consulta um usuario na tabela usando o Id da tela
                 var usuario = banco
                     .Usuarios
-                    .Where(e => e.Id == 1)
+                    .Where(e => e.Id == int.Parse(txtId.TextButton))
                     .FirstOrDefault();
-                usuario.Nome = "Natasha";
-                usuario.Email = "nat@gmail.com";
+
+                usuario.Nome = txtNome.TextButton;
+                usuario.Email = txtEmail.TextButton;
+                usuario.Senha = txtSenha.TextButton;
                 banco.SaveChanges();
             }
         }
@@ -41,9 +43,9 @@
             using (var banco = new BananaContext())
             {
                 var novoUsuario = new Usuario();
-                novoUsuario.Nome = "Rafael";
-                novoUsuario.Email = "rafaelv_s@hotmail.com";
-                novoUsuario.Senha = "123";
+                novoUsuario.Nome = txtNome.TextButton;
+                novoUsuario.Email = txtEmail.TextButton;
+                novoUsuario.Senha = txtSenha.TextButton;
                 banco.Usuarios.Add(novoUsuario);
                 banco.SaveChanges();
             }

@@ -7,6 +7,20 @@
         public FrmUsuarios()
         {
             InitializeComponent();
+            // metodo que lista os usuarios
+            ListarUsuarios();
+        }
+
+        private void ListarUsuarios()
+        {
+            // 1. conectar no banco
+            using (var banco = new BananaContext())
+            {
+                // 2. SELECT * FROM usuarios
+                var usuarios = banco.Usuarios.ToList();
+                // 3. Popular a tabela na tela DataGridView
+                dgvUsuarios.DataSource = usuarios;
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -20,6 +34,18 @@
                 CriarUsuario();
             else
                 AtualizarUsuario();
+
+            DesabilitarCampos();
+            ListarUsuarios();
+            LimparCampos();
+        }
+
+        private void LimparCampos()
+        {
+            txtId.TextButton = string.Empty;
+            txtNome.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtSenha.Text = string.Empty;
         }
 
         private void AtualizarUsuario()
@@ -54,6 +80,25 @@
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ehNovo = true;
+            HabilitarCampos();
+        }
+        private void HabilitarCampos()
+        {
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtSenha.Enabled = true;
+        }
+        private void DesabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtSenha.Enabled = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // indica que está editando um usuario
+            ehNovo = false;
         }
     }
 }

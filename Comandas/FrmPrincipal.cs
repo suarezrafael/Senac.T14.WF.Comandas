@@ -15,7 +15,7 @@ namespace Comandas
             // criar uma variavel do tipo BananaContext
             // usar a var e acessar o contexto
             // executar a migração == F5
-            using (var banco = new BananaContext())
+            using (var banco = new BancoDeDados())
             {
                 // executa a migração(CREATE TABLE Usuarios)
                 banco.Database.Migrate();

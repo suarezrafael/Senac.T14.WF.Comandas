@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Comandas.Migrations
 {
-    [DbContext(typeof(BananaContext))]
+    [DbContext(typeof(BancoDeDados))]
     partial class BananaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

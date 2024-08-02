@@ -3,7 +3,7 @@
 namespace Comandas
 {
     // Classe que representa o banco de dados
-    public class BananaContext : DbContext
+    public class BancoDeDados : DbContext
     {
         // propriedade que representa a tabela Usuarios
         public DbSet<Usuario> Usuarios { get; set; }

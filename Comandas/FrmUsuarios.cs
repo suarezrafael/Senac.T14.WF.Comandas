@@ -14,7 +14,7 @@
         private void ListarUsuarios()
         {
             // 1. conectar no banco
-            using (var banco = new BananaContext())
+            using (var banco = new BancoDeDados())
             {
                 // 2. SELECT * FROM usuarios
                 var usuarios = banco.Usuarios.ToList();
@@ -43,14 +43,14 @@
         private void LimparCampos()
         {
             txtId.TextButton = string.Empty;
-            txtNome.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtSenha.Text = string.Empty;
+            txtNome.TextButton = string.Empty;
+            txtEmail.TextButton = string.Empty;
+            txtSenha.TextButton = string.Empty;
         }
 
         private void AtualizarUsuario()
         {
-            using (var banco = new BananaContext())
+            using (var banco = new BancoDeDados())
             { // consulta um usuario na tabela usando o Id da tela
                 var usuario = banco
                     .Usuarios
@@ -66,7 +66,7 @@
 
         private void CriarUsuario()
         {
-            using (var banco = new BananaContext())
+            using (var banco = new BancoDeDados())
             {
                 var novoUsuario = new Usuario();
                 novoUsuario.Nome = txtNome.TextButton;
@@ -99,6 +99,43 @@
         {
             // indica que está editando um usuario
             ehNovo = false;
+            HabilitarCampos();
+        }
+
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+            CarregarUsuarios();
+        }
+
+        private void CarregarUsuarios()
+        {
+            // Conectar no banco
+            using (var banco = new BancoDeDados())
+            {
+                // Realizar consulta na tabela usuarios
+                var usuarios = banco.Usuarios.ToList();
+                // Popular os dados do grid(dataGridView)
+                dgvUsuarios.DataSource = usuarios;
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // verifica se o indice da linha é maior igual a 0
+            // saber se existe uma linha selecionada
+            if (e.RowIndex >= 0)
+            {
+                // obter dados da linha
+                var id = dgvUsuarios.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                var nome = dgvUsuarios.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+                var email = dgvUsuarios.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                var senha = dgvUsuarios.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
+
+                txtId.TextButton = id;
+                txtNome.TextButton = nome;
+                txtEmail.TextButton = email;
+                txtSenha.TextButton = senha;
+            }
         }
     }
 }

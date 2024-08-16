@@ -110,6 +110,7 @@
             btnSalvar.Effect_2 = true;
             btnSalvar.Effect_2_ColorBackground = Color.White;
             btnSalvar.Effect_2_Transparency = 20;
+            btnSalvar.Enabled = false;
             btnSalvar.Font = new Font("Arial", 11F);
             btnSalvar.ForeColor = Color.FromArgb(245, 245, 245);
             btnSalvar.Lighting = false;
@@ -405,6 +406,7 @@
             btnEditar.Effect_2 = true;
             btnEditar.Effect_2_ColorBackground = Color.White;
             btnEditar.Effect_2_Transparency = 20;
+            btnEditar.Enabled = false;
             btnEditar.Font = new Font("Arial", 11F);
             btnEditar.ForeColor = Color.FromArgb(245, 245, 245);
             btnEditar.Lighting = false;
@@ -446,6 +448,7 @@
             btnExcluir.Effect_2 = true;
             btnExcluir.Effect_2_ColorBackground = Color.White;
             btnExcluir.Effect_2_Transparency = 20;
+            btnExcluir.Enabled = false;
             btnExcluir.Font = new Font("Arial", 11F);
             btnExcluir.ForeColor = Color.FromArgb(245, 245, 245);
             btnExcluir.Lighting = false;
@@ -464,6 +467,7 @@
             btnExcluir.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnExcluir.Timer_Effect_1 = 5;
             btnExcluir.Timer_RGB = 300;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnCancelar
             // 
@@ -486,6 +490,7 @@
             btnCancelar.Effect_2 = true;
             btnCancelar.Effect_2_ColorBackground = Color.White;
             btnCancelar.Effect_2_Transparency = 20;
+            btnCancelar.Enabled = false;
             btnCancelar.Font = new Font("Arial", 11F);
             btnCancelar.ForeColor = Color.FromArgb(245, 245, 245);
             btnCancelar.Lighting = false;
@@ -504,6 +509,7 @@
             btnCancelar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnCancelar.Timer_Effect_1 = 5;
             btnCancelar.Timer_RGB = 300;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmUsuarios
             // 

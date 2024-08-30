@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
-            txtTitulo = new ReaLTaiizor.Controls.CyberTextBox();
-            txtPreco = new ReaLTaiizor.Controls.CyberTextBox();
-            txtDescricao = new ReaLTaiizor.Controls.CyberTextBox();
-            chkPreparo = new ReaLTaiizor.Controls.CyberCheckBox();
-            crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
-            crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
             crownLabel3 = new ReaLTaiizor.Controls.CrownLabel();
+            crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
+            crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
+            chkPreparo = new ReaLTaiizor.Controls.CyberCheckBox();
+            txtDescricao = new ReaLTaiizor.Controls.CyberTextBox();
+            txtPreco = new ReaLTaiizor.Controls.CyberTextBox();
+            txtTitulo = new ReaLTaiizor.Controls.CyberTextBox();
             btnCancelar = new ReaLTaiizor.Controls.CyberButton();
             btnSalvar = new ReaLTaiizor.Controls.CyberButton();
             cyberGroupBox1.SuspendLayout();
@@ -81,95 +81,39 @@
             cyberGroupBox1.Timer_RGB = 300;
             cyberGroupBox1.Load += cyberGroupBox1_Load;
             // 
-            // txtTitulo
+            // crownLabel3
             // 
-            txtTitulo.Alpha = 20;
-            txtTitulo.BackColor = Color.Transparent;
-            txtTitulo.Background_WidthPen = 3F;
-            txtTitulo.BackgroundPen = true;
-            txtTitulo.ColorBackground = Color.White;
-            txtTitulo.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            txtTitulo.ColorLighting = Color.FromArgb(29, 200, 238);
-            txtTitulo.ColorPen_1 = Color.FromArgb(29, 200, 238);
-            txtTitulo.ColorPen_2 = Color.Black;
-            txtTitulo.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            txtTitulo.Font = new Font("Arial", 10F);
-            txtTitulo.ForeColor = Color.Black;
-            txtTitulo.Lighting = false;
-            txtTitulo.LinearGradientPen = false;
-            txtTitulo.Location = new Point(84, 50);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.PenWidth = 15;
-            txtTitulo.RGB = false;
-            txtTitulo.Rounding = true;
-            txtTitulo.RoundingInt = 60;
-            txtTitulo.Size = new Size(503, 40);
-            txtTitulo.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            txtTitulo.TabIndex = 0;
-            txtTitulo.Tag = "Cyber";
-            txtTitulo.TextButton = "";
-            txtTitulo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            txtTitulo.Timer_RGB = 300;
+            crownLabel3.AutoSize = true;
+            crownLabel3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel3.ForeColor = Color.FromArgb(220, 220, 220);
+            crownLabel3.Location = new Point(84, 189);
+            crownLabel3.Name = "crownLabel3";
+            crownLabel3.Size = new Size(73, 32);
+            crownLabel3.TabIndex = 6;
+            crownLabel3.Text = "Preço";
             // 
-            // txtPreco
+            // crownLabel2
             // 
-            txtPreco.Alpha = 20;
-            txtPreco.BackColor = Color.Transparent;
-            txtPreco.Background_WidthPen = 3F;
-            txtPreco.BackgroundPen = true;
-            txtPreco.ColorBackground = Color.White;
-            txtPreco.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            txtPreco.ColorLighting = Color.FromArgb(29, 200, 238);
-            txtPreco.ColorPen_1 = Color.FromArgb(29, 200, 238);
-            txtPreco.ColorPen_2 = Color.FromArgb(37, 52, 68);
-            txtPreco.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            txtPreco.Font = new Font("Arial", 10F);
-            txtPreco.ForeColor = Color.Black;
-            txtPreco.Lighting = false;
-            txtPreco.LinearGradientPen = false;
-            txtPreco.Location = new Point(85, 221);
-            txtPreco.Name = "txtPreco";
-            txtPreco.PenWidth = 15;
-            txtPreco.RGB = false;
-            txtPreco.Rounding = true;
-            txtPreco.RoundingInt = 60;
-            txtPreco.Size = new Size(232, 40);
-            txtPreco.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            txtPreco.TabIndex = 1;
-            txtPreco.Tag = "Cyber";
-            txtPreco.TextButton = "";
-            txtPreco.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            txtPreco.Timer_RGB = 300;
+            crownLabel2.AutoSize = true;
+            crownLabel2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel2.ForeColor = Color.FromArgb(220, 220, 220);
+            crownLabel2.Location = new Point(84, 100);
+            crownLabel2.Name = "crownLabel2";
+            crownLabel2.Size = new Size(116, 32);
+            crownLabel2.TabIndex = 5;
+            crownLabel2.Text = "Descrição";
+            crownLabel2.Click += crownLabel2_Click;
             // 
-            // txtDescricao
+            // crownLabel1
             // 
-            txtDescricao.Alpha = 20;
-            txtDescricao.BackColor = Color.Transparent;
-            txtDescricao.Background_WidthPen = 3F;
-            txtDescricao.BackgroundPen = true;
-            txtDescricao.ColorBackground = Color.White;
-            txtDescricao.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            txtDescricao.ColorLighting = Color.FromArgb(29, 200, 238);
-            txtDescricao.ColorPen_1 = Color.FromArgb(29, 200, 238);
-            txtDescricao.ColorPen_2 = Color.FromArgb(37, 52, 68);
-            txtDescricao.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            txtDescricao.Font = new Font("Arial", 10F);
-            txtDescricao.ForeColor = Color.Black;
-            txtDescricao.Lighting = false;
-            txtDescricao.LinearGradientPen = false;
-            txtDescricao.Location = new Point(84, 132);
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.PenWidth = 15;
-            txtDescricao.RGB = false;
-            txtDescricao.Rounding = true;
-            txtDescricao.RoundingInt = 60;
-            txtDescricao.Size = new Size(503, 40);
-            txtDescricao.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            txtDescricao.TabIndex = 2;
-            txtDescricao.Tag = "Cyber";
-            txtDescricao.TextButton = "";
-            txtDescricao.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            txtDescricao.Timer_RGB = 300;
+            crownLabel1.AutoSize = true;
+            crownLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel1.ForeColor = Color.FromArgb(220, 220, 220);
+            crownLabel1.Location = new Point(84, 18);
+            crownLabel1.Name = "crownLabel1";
+            crownLabel1.Size = new Size(75, 32);
+            crownLabel1.TabIndex = 4;
+            crownLabel1.Text = "Título";
             // 
             // chkPreparo
             // 
@@ -209,39 +153,95 @@
             chkPreparo.Timer_Effect_1 = 1;
             chkPreparo.Timer_RGB = 300;
             // 
-            // crownLabel1
+            // txtDescricao
             // 
-            crownLabel1.AutoSize = true;
-            crownLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel1.Location = new Point(84, 18);
-            crownLabel1.Name = "crownLabel1";
-            crownLabel1.Size = new Size(75, 32);
-            crownLabel1.TabIndex = 4;
-            crownLabel1.Text = "Título";
+            txtDescricao.Alpha = 20;
+            txtDescricao.BackColor = Color.Transparent;
+            txtDescricao.Background_WidthPen = 3F;
+            txtDescricao.BackgroundPen = true;
+            txtDescricao.ColorBackground = Color.White;
+            txtDescricao.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            txtDescricao.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtDescricao.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtDescricao.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtDescricao.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtDescricao.Font = new Font("Arial", 10F);
+            txtDescricao.ForeColor = Color.Black;
+            txtDescricao.Lighting = false;
+            txtDescricao.LinearGradientPen = false;
+            txtDescricao.Location = new Point(84, 132);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.PenWidth = 15;
+            txtDescricao.RGB = false;
+            txtDescricao.Rounding = true;
+            txtDescricao.RoundingInt = 60;
+            txtDescricao.Size = new Size(503, 40);
+            txtDescricao.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtDescricao.TabIndex = 2;
+            txtDescricao.Tag = "Cyber";
+            txtDescricao.TextButton = "";
+            txtDescricao.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtDescricao.Timer_RGB = 300;
             // 
-            // crownLabel2
+            // txtPreco
             // 
-            crownLabel2.AutoSize = true;
-            crownLabel2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel2.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel2.Location = new Point(84, 100);
-            crownLabel2.Name = "crownLabel2";
-            crownLabel2.Size = new Size(116, 32);
-            crownLabel2.TabIndex = 5;
-            crownLabel2.Text = "Descrição";
-            crownLabel2.Click += crownLabel2_Click;
+            txtPreco.Alpha = 20;
+            txtPreco.BackColor = Color.Transparent;
+            txtPreco.Background_WidthPen = 3F;
+            txtPreco.BackgroundPen = true;
+            txtPreco.ColorBackground = Color.White;
+            txtPreco.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            txtPreco.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtPreco.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtPreco.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtPreco.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtPreco.Font = new Font("Arial", 10F);
+            txtPreco.ForeColor = Color.Black;
+            txtPreco.Lighting = false;
+            txtPreco.LinearGradientPen = false;
+            txtPreco.Location = new Point(85, 221);
+            txtPreco.Name = "txtPreco";
+            txtPreco.PenWidth = 15;
+            txtPreco.RGB = false;
+            txtPreco.Rounding = true;
+            txtPreco.RoundingInt = 60;
+            txtPreco.Size = new Size(232, 40);
+            txtPreco.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtPreco.TabIndex = 1;
+            txtPreco.Tag = "Cyber";
+            txtPreco.TextButton = "";
+            txtPreco.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtPreco.Timer_RGB = 300;
             // 
-            // crownLabel3
+            // txtTitulo
             // 
-            crownLabel3.AutoSize = true;
-            crownLabel3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel3.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel3.Location = new Point(84, 189);
-            crownLabel3.Name = "crownLabel3";
-            crownLabel3.Size = new Size(73, 32);
-            crownLabel3.TabIndex = 6;
-            crownLabel3.Text = "Preço";
+            txtTitulo.Alpha = 20;
+            txtTitulo.BackColor = Color.Transparent;
+            txtTitulo.Background_WidthPen = 3F;
+            txtTitulo.BackgroundPen = true;
+            txtTitulo.ColorBackground = Color.White;
+            txtTitulo.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            txtTitulo.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtTitulo.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtTitulo.ColorPen_2 = Color.Black;
+            txtTitulo.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtTitulo.Font = new Font("Arial", 10F);
+            txtTitulo.ForeColor = Color.Black;
+            txtTitulo.Lighting = false;
+            txtTitulo.LinearGradientPen = false;
+            txtTitulo.Location = new Point(84, 50);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.PenWidth = 15;
+            txtTitulo.RGB = false;
+            txtTitulo.Rounding = true;
+            txtTitulo.RoundingInt = 60;
+            txtTitulo.Size = new Size(503, 40);
+            txtTitulo.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtTitulo.TabIndex = 0;
+            txtTitulo.Tag = "Cyber";
+            txtTitulo.TextButton = "";
+            txtTitulo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtTitulo.Timer_RGB = 300;
             // 
             // btnCancelar
             // 
@@ -323,6 +323,7 @@
             btnSalvar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnSalvar.Timer_Effect_1 = 5;
             btnSalvar.Timer_RGB = 300;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // FrmCardapioCad
             // 

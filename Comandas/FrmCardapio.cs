@@ -14,12 +14,15 @@
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            new FrmCardapioCad().ShowDialog();
+            var ehNovo = false;
+            new FrmCardapioCad(ehNovo).ShowDialog();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            new FrmCardapioCad().ShowDialog();
+            // criei uma variavel booleana para indicar o tipo da cad
+            var ehNovo = true;
+            new FrmCardapioCad(ehNovo).ShowDialog();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

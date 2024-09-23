@@ -5,11 +5,20 @@ namespace Comandas
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        private readonly BancoDeDados _context;
+
+        public FrmPrincipal(BancoDeDados context)
         {
             InitializeComponent();
-            CriarBancoDeDados();
+            _context = context;
         }
+
+        //public FrmPrincipal()
+        //{
+        //    InitializeComponent();
+        //    CriarBancoDeDados();
+        //}
+
         // método (visibilidade=private, retorno=void nome)
         private void CriarBancoDeDados()
         {

@@ -9,11 +9,19 @@ namespace Comandas
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cardapio> Cardapios { get; set; }
 
-        // métodos que configura informando para o EF que o banco será SQlite
-        protected override void OnConfiguring(DbContextOptionsBuilder
-       optionsBuilder)
+        public BancoDeDados()
         {
-            optionsBuilder.UseSqlite("Data Source=comandas.db");
+
         }
+        public BancoDeDados(DbContextOptions<BancoDeDados> options) : base(options)
+        {
+
+        }
+        //métodos que configura informando para o EF que o banco será SQlite
+        // protected override void OnConfiguring(DbContextOptionsBuilder
+        //optionsBuilder)
+        // {
+        //     optionsBuilder.UseSqlite("Data Source=comandas.db");
+        // }
     }
 }

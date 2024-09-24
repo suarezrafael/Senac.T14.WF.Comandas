@@ -4,10 +4,12 @@
     {   // variavel que indica se esta criando um novo cardapio
         // bool  = true, false
         bool ehNovo = false;
-        public FrmCardapioCad(bool acao)
+        private readonly BancoDeDados _context;
+        public FrmCardapioCad(bool acao, BancoDeDados context)
         {
             ehNovo = acao;
             InitializeComponent();
+            _context = context;
         }
 
         private void cyberGroupBox1_Load(object sender, EventArgs e)
@@ -42,35 +44,33 @@
 
         private void AtualizarCardapio()
         {
-            using (var banco = new BancoDeDados())
-            {
-                var cardapio = banco.Cardapios.
-                       FirstOrDefault(c => c.Id ==
-                                    int.Parse(txtId.TextButton));
 
-                cardapio.Titulo = txtTitulo.TextButton;
-                cardapio.Descricao = txtDescricao.TextButton;
-                cardapio.Preco = decimal.Parse(txtPreco.TextButton);
-                cardapio.PossuiPreparo = chkPreparo.Checked;
-                banco.SaveChanges();
-            }
+            var cardapio = _context.Cardapios.
+                   FirstOrDefault(c => c.Id ==
+                                int.Parse(txtId.TextButton));
+
+            cardapio.Titulo = txtTitulo.TextButton;
+            cardapio.Descricao = txtDescricao.TextButton;
+            cardapio.Preco = decimal.Parse(txtPreco.TextButton);
+            cardapio.PossuiPreparo = chkPreparo.Checked;
+            _context.SaveChanges();
+
         }
 
         private void AdicionarCardapio()
         {
             // cria uma variavel banco que instancia um conexao com BD
-            using (var banco = new BancoDeDados())
+
+            var novoCardapio = new Cardapio()
             {
-                var novoCardapio = new Cardapio()
-                {
-                    Titulo = txtTitulo.TextButton,
-                    Descricao = txtDescricao.TextButton,
-                    Preco = decimal.Parse(txtPreco.TextButton),
-                    PossuiPreparo = chkPreparo.Checked
-                };
-                banco.Cardapios.Add(novoCardapio);
-                banco.SaveChanges();
-            }
+                Titulo = txtTitulo.TextButton,
+                Descricao = txtDescricao.TextButton,
+                Preco = decimal.Parse(txtPreco.TextButton),
+                PossuiPreparo = chkPreparo.Checked
+            };
+            _context.Cardapios.Add(novoCardapio);
+            _context.SaveChanges();
+
         }
     }
 }

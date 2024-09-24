@@ -21,6 +21,10 @@ namespace Comandas
 
                 // Registre seus Forms aqui
                 services.AddTransient<FrmPrincipal>();
+                services.AddTransient<FrmUsuarios>();
+                services.AddTransient<FrmCardapio>();
+                services.AddTransient<FrmCardapioCad>();
+
                 // Adicione outros Forms ou serviços conforme necessário
             })
             .Build();
@@ -35,7 +39,6 @@ namespace Comandas
                 var mainForm = services.GetRequiredService<FrmPrincipal>();
                 Application.Run(mainForm);
             }
-            //Application.Run(new FrmPrincipal());
         }
     }
 }

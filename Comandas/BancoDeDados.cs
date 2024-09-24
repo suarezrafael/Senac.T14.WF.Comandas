@@ -9,10 +9,7 @@ namespace Comandas
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cardapio> Cardapios { get; set; }
 
-        public BancoDeDados()
-        {
 
-        }
         public BancoDeDados(DbContextOptions<BancoDeDados> options) : base(options)
         {
 

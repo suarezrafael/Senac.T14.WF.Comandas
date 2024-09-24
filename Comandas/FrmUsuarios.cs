@@ -3,24 +3,22 @@
     public partial class FrmUsuarios : Form
     {
         private bool ehNovo;
+        private readonly BancoDeDados _context;
 
-        public FrmUsuarios()
+        public FrmUsuarios(BancoDeDados context)
         {
             InitializeComponent();
-            // metodo que lista os usuarios
+            _context = context;
             ListarUsuarios();
         }
 
         private void ListarUsuarios()
         {
-            // 1. conectar no banco
-            using (var banco = new BancoDeDados())
-            {
-                // 2. SELECT * FROM usuarios
-                var usuarios = banco.Usuarios.ToList();
-                // 3. Popular a tabela na tela DataGridView
-                dgvUsuarios.DataSource = usuarios;
-            }
+            // 2. SELECT * FROM usuarios
+            var usuarios = _context.Usuarios.ToList();
+            // 3. Popular a tabela na tela DataGridView
+            dgvUsuarios.DataSource = usuarios;
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -43,6 +41,7 @@
             btnSalvar.Enabled = false;
             btnExcluir.Enabled = false;
             btnCancelar.Enabled = false;
+            MessageBox.Show("Salvo");
         }
 
         private void LimparCampos()
@@ -55,37 +54,35 @@
 
         private void AtualizarUsuario()
         {
-            using (var banco = new BancoDeDados())
-            { // consulta um usuario na tabela usando o Id da tela
-                var usuario = banco
-                    .Usuarios
-                    .Where(e => e.Id == int.Parse(txtId.TextButton))
-                    .FirstOrDefault();
+            // consulta um usuario na tabela usando o Id da tela
+            var usuario = _context
+                .Usuarios
+                .Where(e => e.Id == int.Parse(txtId.TextButton))
+                .FirstOrDefault();
 
-                usuario.Nome = txtNome.TextButton;
-                usuario.Email = txtEmail.TextButton;
-                usuario.Senha = txtSenha.TextButton;
-                banco.SaveChanges();
-            }
+            usuario.Nome = txtNome.TextButton;
+            usuario.Email = txtEmail.TextButton;
+            usuario.Senha = txtSenha.TextButton;
+            _context.SaveChanges();
+
         }
 
         private void CriarUsuario()
         {
-            using (var banco = new BancoDeDados())
-            {
-                var novoUsuario = new Usuario();
-                novoUsuario.Nome = txtNome.TextButton;
-                novoUsuario.Email = txtEmail.TextButton;
-                novoUsuario.Senha = txtSenha.TextButton;
-                banco.Usuarios.Add(novoUsuario);
-                banco.SaveChanges();
-            }
+            var novoUsuario = new Usuario();
+            novoUsuario.Nome = txtNome.TextButton;
+            novoUsuario.Email = txtEmail.TextButton;
+            novoUsuario.Senha = txtSenha.TextButton;
+            _context.Usuarios.Add(novoUsuario);
+            _context.SaveChanges();
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ehNovo = true;
             HabilitarCampos();
+            btnSalvar.Enabled = ehNovo;
         }
         private void HabilitarCampos()
         {
@@ -119,14 +116,12 @@
 
         private void CarregarUsuarios()
         {
-            // Conectar no banco
-            using (var banco = new BancoDeDados())
-            {
-                // Realizar consulta na tabela usuarios
-                var usuarios = banco.Usuarios.ToList();
-                // Popular os dados do grid(dataGridView)
-                dgvUsuarios.DataSource = usuarios;
-            }
+
+            // Realizar consulta na tabela usuarios
+            var usuarios = _context.Usuarios.ToList();
+            // Popular os dados do grid(dataGridView)
+            dgvUsuarios.DataSource = usuarios;
+
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -183,23 +178,22 @@
         private void ExcluirUsuario(int idUsuario)
         {
             // conectar no banco de dados
-            using (var banco = new BancoDeDados())
-            {
-                // consultar o usuario
-                // SELECT * FROM usuarios WHERE id = ?
-                var usuario = banco
-                                .Usuarios
-                                    .First(u => u.Id
-                                        .Equals(idUsuario)
-                                     );
-                // avisar o banco que estou excluindo
-                // DELETE FROM usuarios WHERE id = ?
-                banco.Usuarios.Remove(usuario);
 
-                // confirmar a exclusão
-                // COMMIT
-                banco.SaveChanges();
-            }
+            // consultar o usuario
+            // SELECT * FROM usuarios WHERE id = ?
+            var usuario = _context
+                            .Usuarios
+                                .First(u => u.Id
+                                    .Equals(idUsuario)
+                                 );
+            // avisar o banco que estou excluindo
+            // DELETE FROM usuarios WHERE id = ?
+            _context.Usuarios.Remove(usuario);
+
+            // confirmar a exclusão
+            // COMMIT
+            _context.SaveChanges();
+
         }
     }
 }

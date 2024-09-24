@@ -15,17 +15,13 @@ namespace Comandas
             var host = Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) =>
             {
-                // Configura o DbContext para usar SQLite
                 services.AddDbContext<BancoDeDados>(options =>
                 options.UseSqlite("Data Source=comandas.db"));
 
-                // Registre seus Forms aqui
                 services.AddTransient<FrmPrincipal>();
                 services.AddTransient<FrmUsuarios>();
                 services.AddTransient<FrmCardapio>();
                 services.AddTransient<FrmCardapioCad>();
-
-                // Adicione outros Forms ou serviços conforme necessário
             })
             .Build();
 

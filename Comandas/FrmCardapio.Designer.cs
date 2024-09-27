@@ -156,6 +156,7 @@
             dgvCardapio.Name = "dgvCardapio";
             dgvCardapio.Size = new Size(776, 263);
             dgvCardapio.TabIndex = 3;
+            dgvCardapio.CellClick += dgvCardapio_CellClick;
             // 
             // btnExcluir
             // 
@@ -178,6 +179,7 @@
             btnExcluir.Effect_2 = true;
             btnExcluir.Effect_2_ColorBackground = Color.White;
             btnExcluir.Effect_2_Transparency = 20;
+            btnExcluir.Enabled = false;
             btnExcluir.Font = new Font("Arial", 11F);
             btnExcluir.ForeColor = Color.Black;
             btnExcluir.Lighting = false;
@@ -219,6 +221,7 @@
             btnEditar.Effect_2 = true;
             btnEditar.Effect_2_ColorBackground = Color.White;
             btnEditar.Effect_2_Transparency = 20;
+            btnEditar.Enabled = false;
             btnEditar.Font = new Font("Arial", 11F);
             btnEditar.ForeColor = Color.Black;
             btnEditar.Lighting = false;

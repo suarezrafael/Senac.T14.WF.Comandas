@@ -4,20 +4,22 @@
     {   // variavel que indica se esta criando um novo cardapio
         // bool  = true, false
         bool ehNovo = false;
+        private FrmCardapio _frmCardapio;
 
         public int ID { get; }
-        public string? TITULO { get; }
+        public string? TITULO { get; set; }
         public string? DESCRICAO { get; }
         public decimal PRECO { get; }
         public bool POSSUI_PREPARO { get; }
 
-        public FrmCardapioCad(bool acao)
+        public FrmCardapioCad(bool acao, FrmCardapio frmCardapio)
         {
             ehNovo = acao;
+            _frmCardapio = frmCardapio;
             InitializeComponent();
         }
 
-        public FrmCardapioCad(bool acao, int iD, string? tITULO, string? dESCRICAO, decimal pRECO, bool pOSSUI_PREPARO) : this(acao)
+        public FrmCardapioCad(bool acao, int iD, string? tITULO, string? dESCRICAO, decimal pRECO, bool pOSSUI_PREPARO, FrmCardapio frmCardapio) : this(acao, frmCardapio)
         {
             ehNovo = acao;
             InitializeComponent();
@@ -27,6 +29,7 @@
             PRECO = pRECO;
             POSSUI_PREPARO = pOSSUI_PREPARO;
             PopularCampos();
+
         }
 
         private void PopularCampos()
@@ -36,16 +39,7 @@
             txtDescricao.TextButton = DESCRICAO;
             txtPreco.TextButton = PRECO.ToString();
             chkPreparo.Checked = POSSUI_PREPARO;
-        }
-
-        private void cyberGroupBox1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void crownLabel2_Click(object sender, EventArgs e)
-        {
-
+            textBox1.Text = TITULO;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -64,7 +58,9 @@
             else
             {   // Executa o método que realiza o UPDATE na tabela
                 AtualizarCardapio();
-            } // Fecha a tela atual (FrmCardapioCad)
+            }
+            _frmCardapio.ListarCardapios();
+            // Fecha a tela atual (FrmCardapioCad)
             Close();
         }
 
